@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionProProjectTest", "VisionProProjectTest\VisionProProjectTest.csproj", "{6546034E-4058-4B83-A1B0-5E6117679233}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureViewerSample", "VisionProProjectTest\PictureViewerSample.csproj", "{6546034E-4058-4B83-A1B0-5E6117679233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

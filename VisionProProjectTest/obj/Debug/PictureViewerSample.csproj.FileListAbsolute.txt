@@ -1,0 +1,3 @@
+D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\bin\Debug\VisionProProjectTest.exe.config
+D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.exe
+D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.pdb
