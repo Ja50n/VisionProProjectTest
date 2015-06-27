@@ -1,9 +1,0 @@
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\bin\Debug\VisionProProjectTest.exe.config
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\bin\Debug\VisionProProjectTest.exe
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\bin\Debug\VisionProProjectTest.pdb
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.csprojResolveAssemblyReference.cache
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.Form1.resources
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.Properties.Resources.resources
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.csproj.GenerateResource.Cache
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.exe
-D:\AceFire\repositories\VisionProProjectTest\VisionProProjectTest\obj\Debug\VisionProProjectTest.pdb

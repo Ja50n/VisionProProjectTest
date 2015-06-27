@@ -27,11 +27,6 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
-VisionProProjectTest/obj/*
-VisionProProjectTest/bin/*
-VisionProProjectTest/bin/Debug/VisionProProjectTest.exe
-VisionProProjectTest/bin/Debug/VisionProProjectTest.pdb
-VisionProProjectTest/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-VisionProProjectTest/obj/Debug/PictureViewerSample.csproj.FileListAbsolute.txt
-VisionProProjectTest/obj/Debug/VisionProProjectTest.exe
-VisionProProjectTest/obj/Debug/VisionProProjectTest.pdb
+PictureViewerSample/obj/
+PictureViewerSample/bin/
+
