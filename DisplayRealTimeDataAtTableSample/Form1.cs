@@ -44,7 +44,7 @@ namespace DisplayRealTimeDataAtTableSample
                 }
                 else 
                 {
-                    //Thread.Sleep(1000);
+                    Thread.Sleep(1000);
                     this.dataGridView1.Rows.RemoveAt(0);
                     this.dataGridView1.Rows.Add(IPCamInfo.ID, IPCamInfo.serialNumber, IPCamInfo.location);
                     int lastRowIndex = this.dataGridView1.Rows.Count - 2;
