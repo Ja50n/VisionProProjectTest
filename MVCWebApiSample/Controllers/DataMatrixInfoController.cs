@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,23 +13,23 @@ using System.Web.Http;
 
 namespace MVCWebApiSample.Controllers
 {
-    public class TestController : ApiController
+    public class DataMatrixInfoController : ApiController
     {
-        // GET api/test
+        // GET api/DataMatrixInfo
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/test/5
+        // GET api/DataMatrixInfo/5
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/test
+        // POST api/DataMatrixInfo/Add
         [HttpPost]
-        public WebApiResponse Post()
+        public WebApiResponse Add()
         {
             try
             {
@@ -46,9 +47,11 @@ namespace MVCWebApiSample.Controllers
                     + matrixDataFromClient.actualDataMatrixSize + Environment.NewLine
                     + matrixDataFromClient.codeOfDataMatrix + Environment.NewLine
                     + matrixDataFromClient.differenceOfDataMatrixSize + Environment.NewLine
-                    + matrixDataFromClient.expectedDataMatrixCenter + Environment.NewLine;
+                    + matrixDataFromClient.expectedDataMatrixCenter + Environment.NewLine
+                    + matrixDataFromClient.offsetOfDataMatrixCenter + Environment.NewLine
+                    + matrixDataFromClient.resultOfDataMatrixInspection + Environment.NewLine;
 
-                File.WriteAllText(@"C:\MVCWebApiTest.txt", contentToSave);
+                File.WriteAllText(ConfigurationManager.AppSettings["saveFilePath"], contentToSave);
 
                 WebApiResponse response = new WebApiResponse()
                 {
@@ -67,12 +70,12 @@ namespace MVCWebApiSample.Controllers
             }
         }
 
-        // PUT api/test/5
+        // PUT api/DataMatrixInfo/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/test/5
+        // DELETE api/DataMatrixInfo/5
         public void Delete(int id)
         {
         }

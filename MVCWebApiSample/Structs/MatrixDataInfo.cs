@@ -15,5 +15,15 @@ namespace MVCWebApiSample.Structs
         public string differenceOfDataMatrixSize;
         public string codeOfDataMatrix;
         public string resultOfDataMatrixInspection;
+
+        public static MatrixDataInfo ToObject(string json)
+        {
+            return null;
+        }
+
+        public static string ToJson(MatrixDataInfo data)
+        {
+            return null;
+        }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GCCA.Utilities.V2.HttpClientManager;
 using MVCWebApiSample.Structs;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace MVCWebApiSampleTest
 {
@@ -24,10 +25,9 @@ namespace MVCWebApiSampleTest
                 resultOfDataMatrixInspection = "resultOfDataMatrixInspectionTest"
             };
             string dataInfoJson = JsonConvert.SerializeObject(dataInfoForWebApi);
-            string url = "http://localhost:50622/api/";
-            HttpClientManager httpClientConnector = new HttpClientManager();
-            string responseJsonFromWebApi = httpClientConnector.Post(url, "test", dataInfoJson);
-            WebApiResponse response = JsonConvert.DeserializeObject<WebApiResponse>(responseJsonFromWebApi);
+            string url = ConfigurationManager.AppSettings["apiUrl"];
+            DataMatrixInfoWebApiDataModel dataMatrixWebApi = new DataMatrixInfoWebApiDataModel(url);
+            WebApiResponse response = dataMatrixWebApi.Add(dataInfoForWebApi);
             Assert.IsTrue(response.Success);
             Assert.AreEqual("Got it", response.Message);
         }
