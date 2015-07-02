@@ -40,6 +40,16 @@ namespace DisplayRedisDBDataTest
             cameraInfoDataTable.Rows.Add(cameraInfoDataRow);
             cameraInfoDataTable.AcceptChanges();
             dataGridView.DataSource = cameraInfoDataTable;
+
+            int totalRowHeight = dataGridView.ColumnHeadersHeight;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                totalRowHeight += row.Height;
+            }
+            dataGridView.Height = totalRowHeight - 5;
+
+            dataGridView.Columns["SerialNumber"].ReadOnly = true;
         }
     }
 }
