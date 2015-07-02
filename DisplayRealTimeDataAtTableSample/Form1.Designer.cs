@@ -1,4 +1,5 @@
-﻿namespace DisplayRealTimeDataAtTableSample
+﻿using System.Windows.Forms;
+namespace DisplayRealTimeDataAtTableSample
 {
     partial class Form1
     {
@@ -38,39 +39,51 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.SerialNumber,
             this.Location});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 20);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(381, 401);
+            this.dataGridView1.Size = new System.Drawing.Size(286, 321);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             // 
             // ID
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // SerialNumber
             // 
             this.SerialNumber.HeaderText = "Serial Number";
             this.SerialNumber.Name = "SerialNumber";
+            this.SerialNumber.ReadOnly = true;
             // 
             // Location
             // 
             this.Location.HeaderText = "Location";
             this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(549, 402);
+            this.button1.Location = new System.Drawing.Point(412, 322);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 59);
+            this.button1.Size = new System.Drawing.Size(80, 47);
             this.button1.TabIndex = 1;
             this.button1.Text = "Run";
             this.button1.UseVisualStyleBackColor = true;
@@ -78,11 +91,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 503);
+            this.ClientSize = new System.Drawing.Size(557, 402);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
