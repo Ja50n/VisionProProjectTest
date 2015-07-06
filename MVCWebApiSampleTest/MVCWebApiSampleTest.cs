@@ -13,21 +13,24 @@ namespace MVCWebApiSampleTest
         [TestMethod]
         public void PostDataToWebApi()
         {
-            MatrixDataInfo dataInfoForWebApi = new MatrixDataInfo()
+            DataMatrixInfo dataInfoForWebApi = new DataMatrixInfo()
             {
-                accessOrderInProductBatch = "accessOrderInProductBatchTest",
-                actualDataMatrixCenter = "actualDataMatrixCenterTest",
-                actualDataMatrixSize = "actualDataMatrixSizeTest",
-                codeOfDataMatrix = "codeOfDataMatrixTest",
-                differenceOfDataMatrixSize = "differenceOfDataMatrixSizeTest",
-                expectedDataMatrixCenter = "expectedDataMatrixCenterTest",
-                offsetOfDataMatrixCenter = "offsetOfDataMatrixCenterTest",
-                resultOfDataMatrixInspection = "resultOfDataMatrixInspectionTest"
+                AccessOrderInProductBatch = 2,
+                ExpectedDataMatrixCenter = new Coordinate() { XAxis = 3, YAxis = 4 },
+                ActualDataMatrixCenter = new Coordinate() { XAxis = 3.001, YAxis = 4.001 },
+                ExpectedDataMatrixSize = new DataMatrixSize() { Width = 5, Height = 5 },
+                ActualDataMatrixSize = new DataMatrixSize() { Width = 5.001, Height = 5.002 },
+                ActualDifferenceOfDataMatrixSize = new DataMatrixSize() { Width = 0.001, Height = 0.002 },
+                ActualOffsetOfDataMatrixCenter = new Coordinate() { XAxis = 0.001, YAxis = 0.001 },
+                AllowedDifferenceOfDataMatrixSize = new DataMatrixSize() { Width = 0.002, Height = 0.003 },
+                AllowedOffsetOfDataMatrixCenter = new Coordinate() { XAxis = 0.002, YAxis = 0.004 },
+                CodeOfDataMatrix = "TestCode",
+                SucessOfDataMatrixInspection = true
             };
             string dataInfoJson = JsonConvert.SerializeObject(dataInfoForWebApi);
             string url = ConfigurationManager.AppSettings["apiUrl"];
             DataMatrixInfoWebApiDataModel dataMatrixWebApi = new DataMatrixInfoWebApiDataModel(url);
-            WebApiResponse response = dataMatrixWebApi.Add(dataInfoForWebApi);
+            AddDataMatrixInfoResponse response = dataMatrixWebApi.Add(dataInfoForWebApi);
             Assert.IsTrue(response.Success);
             Assert.AreEqual("Got it", response.Message);
         }

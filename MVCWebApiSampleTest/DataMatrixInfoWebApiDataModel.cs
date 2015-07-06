@@ -17,19 +17,19 @@ namespace MVCWebApiSampleTest
             this.url = url;
         }
 
-        public WebApiResponse Add(MatrixDataInfo data)
+        public AddDataMatrixInfoResponse Add(DataMatrixInfo data)
         {
             try
             {
                 string dataInfoJson = JsonConvert.SerializeObject(data);
                 HttpClientManager httpClientConnector = new HttpClientManager();
                 string responseJsonFromWebApi = httpClientConnector.Post(url, "/DataMatrixInfo/Add", dataInfoJson);
-                WebApiResponse response = JsonConvert.DeserializeObject<WebApiResponse>(responseJsonFromWebApi);
+                AddDataMatrixInfoResponse response = JsonConvert.DeserializeObject<AddDataMatrixInfoResponse>(responseJsonFromWebApi);
                 return response;
             }
             catch(Exception ex)
             {
-                WebApiResponse response = new WebApiResponse()
+                AddDataMatrixInfoResponse response = new AddDataMatrixInfoResponse()
                 {
                     Message = ex.Message,
                     Success = false

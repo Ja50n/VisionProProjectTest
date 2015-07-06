@@ -29,7 +29,7 @@ namespace MVCWebApiSample.Controllers
 
         // POST api/DataMatrixInfo/Add
         [HttpPost]
-        public WebApiResponse Add()
+        public AddDataMatrixInfoResponse Add()
         {
             try
             {
@@ -41,19 +41,12 @@ namespace MVCWebApiSample.Controllers
                 string jsonConvertFromRequest = Encoding.UTF8.GetString(dataByteArray);
 
                 //將Request的傳送內容進行jsonDeserialize
-                MatrixDataInfo matrixDataFromClient = JsonConvert.DeserializeObject<MatrixDataInfo>(jsonConvertFromRequest);
-                string contentToSave = matrixDataFromClient.accessOrderInProductBatch + Environment.NewLine
-                    + matrixDataFromClient.actualDataMatrixCenter + Environment.NewLine
-                    + matrixDataFromClient.actualDataMatrixSize + Environment.NewLine
-                    + matrixDataFromClient.codeOfDataMatrix + Environment.NewLine
-                    + matrixDataFromClient.differenceOfDataMatrixSize + Environment.NewLine
-                    + matrixDataFromClient.expectedDataMatrixCenter + Environment.NewLine
-                    + matrixDataFromClient.offsetOfDataMatrixCenter + Environment.NewLine
-                    + matrixDataFromClient.resultOfDataMatrixInspection + Environment.NewLine;
+                //DataMatrixInfo matrixDataFromClient = JsonConvert.DeserializeObject<DataMatrixInfo>(jsonConvertFromRequest);
+                string contentToSave = jsonConvertFromRequest;
 
                 File.WriteAllText(ConfigurationManager.AppSettings["saveFilePath"], contentToSave);
 
-                WebApiResponse response = new WebApiResponse()
+                AddDataMatrixInfoResponse response = new AddDataMatrixInfoResponse()
                 {
                     Message = "Got it",
                     Success = true
@@ -62,7 +55,7 @@ namespace MVCWebApiSample.Controllers
             }
             catch (Exception ex)
             {
-                return new WebApiResponse()
+                return new AddDataMatrixInfoResponse()
                 {
                     Message = "Didn't Got it",
                     Success = false

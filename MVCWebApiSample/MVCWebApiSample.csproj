@@ -167,8 +167,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Structs\MatrixDataInfo.cs" />
-    <Compile Include="Structs\WebApiResponse.cs" />
+    <Compile Include="Structs\Coordinate.cs" />
+    <Compile Include="Structs\DataMatrixInfo.cs" />
+    <Compile Include="Structs\AddDataMatrixInfoResponse.cs" />
+    <Compile Include="Structs\DataMatrixSize.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

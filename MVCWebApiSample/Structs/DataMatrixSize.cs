@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MVCWebApiSample.Structs
 {
-    public class WebApiResponse
+    public class DataMatrixSize
     {
-        public bool Success;
-        public string Message;
+        public double Width; 
+        public double Height; 
     }
 }

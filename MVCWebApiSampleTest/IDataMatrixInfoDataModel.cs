@@ -9,6 +9,6 @@ namespace MVCWebApiSampleTest
 {
     interface IDataMatrixInfoDataModel
     {
-        WebApiResponse Add(MatrixDataInfo data);
+        AddDataMatrixInfoResponse Add(DataMatrixInfo data);
     }
 }
